@@ -1,0 +1,65 @@
+I want to create a recommender system but I have very little knowledge on how to build one so I will
+learn!
+
+RECOMMENDER SYSTEM 
+    - Collaborative method
+        - NO MODEL
+            - use nearest neighbors to get distance between users(reviewers) and items(anime)
+              (also considered as a no model approach and doesn't work very well for new user recommendations)
+            - large sparse vectors
+        - MODEL 
+            - use a model
+    
+    - CONTENT BASED SYSTEMS
+        - only rely on user-item interactions
+        - use additional information about a user/item
+        - build a model based on the available "features", that explains the 
+          observed user-item interactions
+        - content based systems suffer less from the cold start problem because
+          they have a profile to use for recommendations
+        
+MODELS, BIAS, and VARIANCE
+    - MEMORY BASED COLLABORATIVE method
+        - low BIAS
+        - high VARIANCE
+    - MODEL BASED COLLABORATIVE method
+        - higher BIAS
+        - lower VARIANCE
+    - MODEL BASED CONTENT method
+        - highest BIAS 
+        - lowest VARIANCE 
+
+MEMORY BASED COLLABORATIVE APPROACHES
+- The main characteristics of user-user and item-item approaches it that they use only information
+  from the user-item interaction matrix and they assume no model to produce new recommendations
+    - USER-USER 
+        - identifies users with the most similar "interactions profile" (nearest neighbors)
+        - suggest most popular items in nearest profiles to user 
+        - consider that two users are similar if they have interacted with a lot of common
+          items in the same way (many and similar=neighbors)
+    - ITEM-ITEM
+        - find items that are similar to the items the user has "positivly" interacted with
+        - two items are similar if most of the users that have interacted with both of them 
+          did it in a similar way
+        - compute similarities between the "best item" and all the other items 
+        - recommend items in the neighborhood(knn) of "best item"
+
+MODEL BASED COLLABORATIVE APPROACHES
+- Model based collaborative approaches only rely on user-item interactions information, and
+  assume a latent model to explain these interactions
+    - MATRIX FACTORIZATION
+        - there exists a pretty low demensional latent space of the features in which we can
+          represent both users and items as such that the interactions between users and an
+          item can be obtained by computing the dot product of corresponding dense vectors
+          in that space 
+        - do not give explicitly the features to the model 
+        - let the model discover useful features by itself and make its own representation of
+          both users and items 
+        MATH CONCEPT
+          - using gradient decent (optimization function) to reduce reconstuction error on
+            dot product of user dimension and item dimension 
+          - gradient decent doesn't have to be computed over the whole dot product we consider
+            only a subset of these pairs 
+          - user and item dimensions are optimized at alternative steps (optimize one latent space
+            at a time)
+        

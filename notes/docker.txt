@@ -1,0 +1,10 @@
+Here I will learn about docker why it's useful and how to use it
+
+CONTAINER
+    - a container is simply another process on you machine that has been isolated
+      from all other processes on the host machine 
+    - When unning a container, it uses an isolated filesystem
+    CONTAINER IMAGE
+      - Provieds the isolated filesystem
+      - Must contain everything an app needs to run
+
