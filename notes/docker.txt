@@ -8,3 +8,7 @@ CONTAINER
       - Provieds the isolated filesystem
       - Must contain everything an app needs to run
 
+SETUP
+    - To build a docker container you must first create a Dockerfile with some parameters
+    - Docker builds images automatically by readying the instuctions from the Dockerfile
+      
