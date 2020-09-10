@@ -1,0 +1,8 @@
+1. Create matrix anime_id as columns, rows as user_id each entry being a rating
+    - Create empty dataframe with columns as sorted anime_id
+    - Set index to sorted user_id 
+    - Add list of sorted (by user_id) ratings to each corresponding column 
+
+2. Turn sparse matrix into scipy sparse matrix to save space 
+
+3. Store scipy sparse matrix in a db 
